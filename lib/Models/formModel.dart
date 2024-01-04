@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class FormData {
   String title;
   int goal;
-  DateTime completionDate; // Changed from DateTime to Timestamp
+  DateTime completionDate; 
   int monthlySaving;
   int monthlySalary;
   DateTime recentDateTime;

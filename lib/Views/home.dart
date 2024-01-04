@@ -2,6 +2,7 @@ import 'package:dhiwise/Views/login.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import '../Constants/colors.dart';
 import '../Constants/exception.dart';
 import '../Controllers/formController.dart';
 import 'package:dhiwise/Models/formModel.dart';
@@ -32,7 +33,11 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('DHIWISE'),
+        iconTheme: IconThemeData(color: AppColors.headers),
+        title: Text(
+          'DHIWISE',
+          style: TextStyle(color: AppColors.headers),
+        ),
         actions: [
           IconButton(
               onPressed: () {
@@ -44,10 +49,13 @@ class _HomeState extends State<Home> {
                   MaterialPageRoute(builder: (context) => Login()),
                 );
               },
-              icon: Icon(Icons.logout)),
+              icon: Icon(
+                Icons.logout,
+                color: AppColors.headers,
+              )),
         ],
       ),
-      backgroundColor: Color.fromARGB(255, 0, 2, 42),
+      backgroundColor: AppColors.bg,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -55,9 +63,9 @@ class _HomeState extends State<Home> {
               height: 40,
             ),
             Text(
-              'What is your goal?',
+              'What is your today\'s goal?',
               style: TextStyle(
-                  color: Colors.white,
+                  color: AppColors.safed,
                   fontSize: 25,
                   fontWeight: FontWeight.bold),
             ),
@@ -72,19 +80,27 @@ class _HomeState extends State<Home> {
                       controller: _titleController,
                       decoration: InputDecoration(
                         labelText: 'Title',
-                        labelStyle: TextStyle(color: Colors.grey),
-                        border: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        labelStyle: TextStyle(color: AppColors.safed),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
                       ),
-                      style: TextStyle(color: Colors.white),
-                      cursorColor: Colors.white,
+                      style: TextStyle(
+                        color: AppColors.safed,
+                      ),
+                      cursorColor: AppColors.safed,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Please enter a title';
@@ -92,23 +108,32 @@ class _HomeState extends State<Home> {
                         return null;
                       },
                     ),
+                    SizedBox(height: 20),
                     TextFormField(
                       controller: _goalController,
                       decoration: InputDecoration(
                         labelText: 'Goal',
-                        labelStyle: TextStyle(color: Colors.grey),
-                        border: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        labelStyle: TextStyle(color: AppColors.safed),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
                       ),
-                      style: TextStyle(color: Colors.white),
-                      cursorColor: Colors.white,
+                      style: TextStyle(
+                        color: AppColors.safed,
+                      ),
+                      cursorColor: AppColors.safed,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Please enter a goal';
@@ -116,23 +141,32 @@ class _HomeState extends State<Home> {
                         return null;
                       },
                     ),
+                    SizedBox(height: 20),
                     TextFormField(
                       controller: _completionDateController,
                       decoration: InputDecoration(
                         labelText: 'Goal Completion Date',
-                        labelStyle: TextStyle(color: Colors.grey),
-                        border: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        labelStyle: TextStyle(color: AppColors.safed),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
                       ),
-                      style: TextStyle(color: Colors.white),
-                      cursorColor: Colors.white,
+                      style: TextStyle(
+                        color: AppColors.safed,
+                      ),
+                      cursorColor: AppColors.safed,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Please enter a completion date';
@@ -154,23 +188,32 @@ class _HomeState extends State<Home> {
                         }
                       },
                     ),
+                    SizedBox(height: 20),
                     TextFormField(
                       controller: _monthlySavingController,
                       decoration: InputDecoration(
                         labelText: 'Monthly Projection Saving',
-                        labelStyle: TextStyle(color: Colors.grey),
-                        border: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        labelStyle: TextStyle(color: AppColors.safed),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
                       ),
-                      style: TextStyle(color: Colors.white),
-                      cursorColor: Colors.white,
+                      style: TextStyle(
+                        color: AppColors.safed,
+                      ),
+                      cursorColor: AppColors.safed,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Please enter monthly saving';
@@ -183,19 +226,27 @@ class _HomeState extends State<Home> {
                       controller: _monthlySalaryController,
                       decoration: InputDecoration(
                         labelText: 'Monthly Salary',
-                        labelStyle: TextStyle(color: Colors.grey),
-                        border: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        labelStyle: TextStyle(color: AppColors.safed),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
                       ),
-                      style: TextStyle(color: Colors.white),
-                      cursorColor: Colors.white,
+                      style: TextStyle(
+                        color: AppColors.safed,
+                      ),
+                      cursorColor: AppColors.safed,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Please enter monthly salary';
@@ -208,19 +259,27 @@ class _HomeState extends State<Home> {
                       controller: _recentDateTime,
                       decoration: InputDecoration(
                         labelText: 'Current Date',
-                        labelStyle: TextStyle(color: Colors.grey),
-                        border: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        labelStyle: TextStyle(color: AppColors.safed),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.safed,
+                          ),
                         ),
                       ),
-                      style: TextStyle(color: Colors.white),
-                      cursorColor: Colors.white,
+                      style: TextStyle(
+                        color: AppColors.safed,
+                      ),
+                      cursorColor: AppColors.safed,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Please enter today\'s date';

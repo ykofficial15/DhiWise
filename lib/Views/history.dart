@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../Constants/colors.dart';
 import '../Models/formModel.dart';
 
 class HistoryScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
     DateTime recentDateTime = widget.formData.recentDateTime;
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 2, 42),
+      backgroundColor: AppColors.bg,
       appBar: AppBar(
         title: Text('Transaction History'),
       ),
@@ -29,6 +30,16 @@ class _HistoryScreenState extends State<HistoryScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Center(
+              child: Text(
+                'History',
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.bgDark),
+              ),
+            ),
+              SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -49,12 +60,14 @@ class _HistoryScreenState extends State<HistoryScreen> {
               ],
             ),
             SizedBox(height: 20),
-            Text(
-              'Monthly Savings:',
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 255, 242, 0)),
+            Center(
+              child: Text(
+                'Monthly Savings Transactions',
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.bgDark),
+              ),
             ),
             SizedBox(height: 10),
             Expanded(
@@ -70,12 +83,17 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   String savingText =
                       'On $formattedDate "\$$monthlySaving\" added';
 
-                  return ListTile(
-                    title: Text(
-                      savingText,
-                      style: TextStyle(
-                          color: const Color.fromARGB(255, 142, 255, 146)),
-                    ),
+                  return Column(
+                    children: [
+                      ListTile(
+                        title: Text(
+                          savingText,
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 225, 255, 0)),
+                        ),
+                      ),
+                        Divider(),
+                    ],
                   );
                 },
               ),

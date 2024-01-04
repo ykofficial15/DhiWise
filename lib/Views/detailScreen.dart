@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:dhiwise/Models/formModel.dart';
 import 'package:intl/intl.dart';
 
+import '../Constants/colors.dart';
+
 class DetailScreen extends StatefulWidget {
   final FormData formData;
 
@@ -72,9 +74,11 @@ class _DetailScreenState extends State<DetailScreen>
   Widget build(BuildContext context) {
     final String report =
         (widget.formData.goal <= savedAmount) ? "Completed" : "You Saved";
-    final String progression =(_progressAnimation.value>100)?"Progress: 100%":"Progress: ${(_progressAnimation.value).toInt()}%";
+    final String progression = (_progressAnimation.value > 100)
+        ? "Progress: 100%"
+        : "Progress: ${(_progressAnimation.value).toInt()}%";
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 2, 42),
+      backgroundColor: AppColors.bg,
       appBar: AppBar(
         title: Text(
           'DHIWISE',
@@ -83,7 +87,7 @@ class _DetailScreenState extends State<DetailScreen>
       ),
       body: SingleChildScrollView(
         child: Container(
-          color: Color.fromARGB(255, 0, 2, 42), // Set background color to blue
+          color: AppColors.bg, // Set background color to blue
           // padding: EdgeInsets.all(20), // Add padding for content spacing
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -113,7 +117,7 @@ class _DetailScreenState extends State<DetailScreen>
                       strokeWidth: 10,
                       backgroundColor: Colors.white,
                       valueColor: AlwaysStoppedAnimation<Color>(
-                          Color.fromARGB(255, 78, 175, 255)),
+                          AppColors.bgDark),
                     ),
                   ),
                   Column(
@@ -192,7 +196,7 @@ class _DetailScreenState extends State<DetailScreen>
                 width: MediaQuery.sizeOf(context).width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
-                  color: Color.fromARGB(163, 21, 101, 192),
+                  color: AppColors.bgDark,
                 ),
                 padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
                 margin: EdgeInsets.fromLTRB(60, 0, 60, 0),
@@ -234,25 +238,25 @@ class _DetailScreenState extends State<DetailScreen>
                           'Contribution',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.blueAccent,
+                              color: AppColors.bgDark,
                               fontSize: 15),
                         ),
                         TextButton(
                           onPressed: () {
-                           Navigator.push(
-  context,
-  MaterialPageRoute(
-    builder: (context) => HistoryScreen(
-      formData: widget.formData,
-      savedAmount: savedAmount,
-    ),
-  ),
-);
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HistoryScreen(
+                                  formData: widget.formData,
+                                  savedAmount: savedAmount,
+                                ),
+                              ),
+                            );
                           },
                           child: Text(
                             'History',
                             style: TextStyle(
-                                color: Colors.blueAccent,
+                                color: AppColors.bgDark,
                                 fontWeight: FontWeight.normal),
                           ),
                         ),

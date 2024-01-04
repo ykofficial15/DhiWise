@@ -3,6 +3,7 @@ import 'package:dhiwise/Controllers/loginController.dart';
 import 'package:dhiwise/Controllers/persistentLogin.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../Constants/colors.dart';
 import 'bottomNav.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -13,7 +14,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 2, 42),
+      backgroundColor: AppColors.bg,
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(16.0),
@@ -22,14 +23,21 @@ class Login extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               SizedBox(
-                height: 250,
+                height: 200,
               ),
               Text(
                 'LOGIN',
                 style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                ), // Bigger font size for the title
+                    fontSize: 35,
+                    color: AppColors.safed,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                'Unlock the dreams...',
+                style: TextStyle(
+                  fontSize: 15,
+                  color: AppColors.safed,
+                ),
               ),
               SizedBox(
                 height: 30,
@@ -40,17 +48,17 @@ class Login extends StatelessWidget {
                   labelText: 'Email',
                   labelStyle: TextStyle(color: Colors.grey),
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: BorderSide(color: AppColors.safed),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: BorderSide(color: AppColors.safed),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: BorderSide(color: AppColors.safed),
                   ),
                 ),
-                style: TextStyle(color: Colors.white),
-                cursorColor: Colors.white,
+                style: TextStyle(color: AppColors.safed),
+                cursorColor: AppColors.safed,
               ),
               SizedBox(height: 12.0),
               TextFormField(
@@ -60,17 +68,17 @@ class Login extends StatelessWidget {
                   labelText: 'Password',
                   labelStyle: TextStyle(color: Colors.grey),
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: BorderSide(color: AppColors.safed),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: BorderSide(color: AppColors.safed),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: BorderSide(color: AppColors.safed),
                   ),
                 ),
-                style: TextStyle(color: Colors.white),
-                cursorColor: Colors.white,
+                style: TextStyle(color: AppColors.safed),
+                cursorColor: AppColors.safed,
               ),
               SizedBox(height: 16.0),
               ElevatedButton(
@@ -96,7 +104,10 @@ class Login extends StatelessWidget {
                     DeniedToast.show(message: "Error: ${e.toString()}");
                   }
                 },
-                child: Text('Login'),
+                child: Text(
+                  'Login',
+                  style: TextStyle(color: Colors.black),
+                ),
               ),
             ],
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../Constants/colors.dart';
 import 'home.dart';
 import 'updates.dart';
 
@@ -31,8 +32,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedTab,
         onTap: (index) => _changeTab(index),
-        selectedItemColor: Color.fromARGB(255, 0, 2, 42),
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: AppColors.bg,
+        unselectedItemColor: AppColors.headers,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(

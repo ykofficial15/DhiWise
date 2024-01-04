@@ -7,6 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'Constants/colors.dart';
 import 'Controllers/formController.dart';
 import 'Controllers/getDataController.dart';
 import 'Views/bottomNav.dart';
@@ -55,9 +56,23 @@ class MyApp extends StatelessWidget {
               return ChangeNotifierProvider(
                 create: (context) => AuthProvider(isLoggedIn),
                 child: AnimatedSplashScreen(
-                  backgroundColor: Color.fromARGB(255, 0, 2, 42),
-                  duration: 2000,
-                  splash: Text('DHIWISE',style: TextStyle(color:Colors.white,fontSize: 25, fontWeight: FontWeight.bold),),
+                  backgroundColor: AppColors.bg,
+                  duration: 20000,
+                  splash: Column(
+                    children: [
+                      Text(
+                        'DHIWISE',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'Dreams come true!',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
                   splashIconSize: 100,
                   nextScreen: isLoggedIn ? BottomNavigation() : Login(),
                 ),

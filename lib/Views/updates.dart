@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dhiwise/Models/formModel.dart';
 import 'package:provider/provider.dart';
+import '../Constants/colors.dart';
 import '../Controllers/getDataController.dart';
 import '../Controllers/persistentLogin.dart';
 
@@ -15,9 +16,13 @@ class Updates extends StatelessWidget {
     var firebaseService = Provider.of<FirebaseService>(context, listen: false);
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 2, 42),
+      backgroundColor: AppColors.bg,
       appBar: AppBar(
-        title: Text('DHIWISE'),
+        iconTheme: IconThemeData(color: AppColors.headers),
+        title: Text(
+          'DHIWISE',
+          style: TextStyle(color: AppColors.headers),
+        ),
         actions: [
           IconButton(
               onPressed: () {
@@ -29,7 +34,10 @@ class Updates extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Login()),
                 );
               },
-              icon: Icon(Icons.logout)),
+              icon: Icon(
+                Icons.logout,
+                color: AppColors.headers,
+              )),
         ],
       ),
       body: FutureBuilder<List<FormData>>(
@@ -76,7 +84,10 @@ class Updates extends StatelessWidget {
                             );
                           },
                           trailing: IconButton(
-                            icon: Icon(Icons.delete),
+                            icon: Icon(
+                              Icons.delete,
+                              color: AppColors.headers,
+                            ),
                             onPressed: () {
                               firebaseService.deleteFormData(formData.title);
                               SuccessToast.show(
